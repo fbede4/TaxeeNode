@@ -1,0 +1,32 @@
+<% include header %>
+<% include menubar %>
+<div class="container">
+    <h2>Add Ride</h2>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="plate"><b>Pickup</b></label>
+            <input type="text" class="form-control" id="plate" placeholder="Enter Pickup" name="plate">
+        </div>
+        <div class="form-group">
+            <label for="brand"><b>Destination</b></label>
+            <input type="text" class="form-control" placeholder="Enter Destination" name="brand" required>
+        </div>
+        <div class="form-group">
+
+            <label for="colour"><b>Price</b></label>
+            <input type="number" class="form-control" placeholder="Enter Price" name="colour" required>
+        </div>
+        <div class="form-group">
+
+            <label for="yom"><b>Distance</b></label>
+            <input type="number" class="form-control" placeholder="Enter Distance" name="yom" required>
+        </div>
+        <div class="form-group">
+
+            <label for="yom"><b>Duration</b></label>
+            <input type="number" class="form-control" placeholder="Enter Duration" name="yom" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Ride</button>
+    </form>
+</div>
+<% include footer %>

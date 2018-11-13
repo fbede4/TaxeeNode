@@ -1,0 +1,27 @@
+<% include header %>
+<% include menubar %>
+<div class="container">
+    <h2>New Review</h2>
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="plate"><b>Driver</b></label>
+            <input type="text" class="form-control" id="plate" placeholder="Enter Driver" name="plate">
+        </div>
+        <div class="form-group">
+            <label for="brand"><b>Passenger</b></label>
+            <input type="text" class="form-control" placeholder="Enter Passenger" name="brand" required>
+        </div>
+        <div class="form-group">
+
+            <label for="type"><b>Rating</b></label>
+            <input type="number" class="form-control" placeholder="Enter Rating" name="type" required>
+        </div>
+        <div class="form-group">
+
+            <label for="colour"><b>Review</b></label>
+            <input type="text" class="form-control" placeholder="Enter Review" name="colour" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Review</button>
+    </form>
+</div>
+<% include footer %>
