@@ -35,7 +35,7 @@ module.exports = function (app) {
   app.get('/logout',
     logoutMW(objectRepository),
     function(req, res, next){
-      res.redirect('/');
+      res.redirect('/login');
     }
   );
 

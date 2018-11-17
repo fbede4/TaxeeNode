@@ -5,11 +5,13 @@ var updateRideMW = require('../middleware/rides/updateRide');
 var getRideListMW = require('../middleware/rides/getRideList');
 
 var rideModel = require('../models/ride');
+var userModel = require('../models/user');
 
 module.exports = function (app) {
 
     var objectRepository = {
-        rideModel: rideModel
+        rideModel: rideModel,
+        userModel: userModel
     };
 
     /**

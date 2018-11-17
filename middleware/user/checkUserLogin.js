@@ -22,18 +22,14 @@ module.exports = function (objectrepository) {
         // find the user
         userModel.findOne({
             email: req.body.email
-        },
-        function (err, result) 
-        {
-            if ((err) || (!result)) 
-            {
+        }, function (err, result) {
+            if ((err) || (!result)) {
                 res.tpl.error.push('Your email address is not registered!');
                 return next();
             }
     
             //check password
-            if (result.password !== req.body.password) 
-            {
+            if (result.password !== req.body.password) {
                 res.tpl.error.push('Wrong password!');
                 return next();
             }
@@ -42,7 +38,7 @@ module.exports = function (objectrepository) {
             req.session.userid = result._id;
     
             //redirect to / so the app can decide where to go next
-            return res.redirect('/');
+            return res.redirect('/rides');
         });
     };
 };

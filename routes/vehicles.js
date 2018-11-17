@@ -6,11 +6,13 @@ var updateVeicleMW = require('../middleware/vehicles/updateVehicle');
 var getVehicleMW = require('../middleware/vehicles/getVehicle');
 var deleteVehicleMW = require('../middleware/vehicles/getVehicle');
 var vehicleModel = require('../models/vehicle');
+var userModel = require('../models/user');
 
 module.exports = function (app) {
 
     var objectRepository = {
-        vehicleModel: vehicleModel
+        vehicleModel: vehicleModel,
+        userModel: userModel
     };
 
     /**

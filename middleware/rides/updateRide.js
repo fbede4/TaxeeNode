@@ -9,11 +9,39 @@ var requireOption = require('../common').requireOption;
 
 module.exports = function (objectrepository) {
 
-    var vehicleModel = requireOption(objectrepository, 'rideModel');
+    var rideModel = requireOption(objectrepository, 'rideModel');
 
+    //not enough parameter
     return function (req, res, next) {
 
-        return next();
-    };
+        if ((typeof req.body.pickup === 'undefined') ||
+          (typeof req.body.destination === 'undefined') ||
+          (typeof req.body.price === 'undefined') ||
+          (typeof req.body.duration === 'undefined') ||
+          (typeof req.body.distance === 'undefined')) {
+          return next();
+        }
+    
+        var ride = undefined;
+        if (typeof res.tpl.ride !== 'undefined') {
+            ride = res.tpl.ride;
+        } else {
+            ride = new rideModel();
+        }
+        ride.pickup = req.body.pickup;
+        ride.destination = req.body.destination;
+        ride.price = req.body.price;
+        ride.duration = req.body.duration;
+        ride.distance = req.body.distance;
+        ride.date = Date.now();
+
+        ride.save(function (err, result) {
+          if (err) {
+            return next(err);
+        }
+    
+          return res.redirect('/rides');
+        });
+      };
 
 };

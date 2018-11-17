@@ -2,7 +2,7 @@
 <% include menubar %>
 <div class="container">
     <h2>Add / Modify Vehicle</h2>
-    <form action="/action_page.php">
+    <form method="POST">
         <div class="form-group">
             <label for="plate"><b>Licence plate</b></label>
             <input type="text" class="form-control" id="plate" placeholder="Enter Plate Number" name="plate">
@@ -24,7 +24,7 @@
         <div class="form-group">
 
             <label for="yom"><b>Year of manufacture</b></label>
-            <input type="text" class="form-control" placeholder="Enter Year" name="yom" required>
+            <input type="text" class="form-control" placeholder="Enter Year" name="year" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Vehicle</button>
     </form>

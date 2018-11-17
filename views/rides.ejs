@@ -15,38 +15,16 @@
             </tr>
         </thead>
         <tbody>
+            <% rides.forEach(function(item){ %>
             <tr>
-                <td>Páty</td>
-                <td>Budapest</td>
-                <td>3500 Ft</td>
-                <td>12 km</td>
-                <td>00:32:14</td>
-                <td>2018.08.27</td>
+                <td><%= item.pickup %></td>
+                <td><%= item.destination %></td>
+                <td><%= item.price %> Ft</td>
+                <td><%= item.distance %> km</td>
+                <td><%= item.duration %> min</td>
+                <td><%= item.date.toDateString() %></td>
             </tr>
-            <tr>
-                <td>Budapest</td>
-                <td>Páty</td>
-                <td>3500 Ft</td>
-                <td>12 km</td>
-                <td>00:32:14</td>
-                <td>2018.08.27</td>
-            </tr>
-            <tr>
-                <td>Budapest</td>
-                <td>Páty</td>
-                <td>3500 Ft</td>
-                <td>12 km</td>
-                <td>00:32:14</td>
-                <td>2018.08.27</td>
-            </tr>
-            <tr>
-                <td>Budapest</td>
-                <td>Páty</td>
-                <td>3500 Ft</td>
-                <td>12 km</td>
-                <td>00:32:14</td>
-                <td>2018.08.27</td>
-            </tr>
+            <% }); %>
         </tbody>
     </table>
 </div>

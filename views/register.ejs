@@ -1,7 +1,7 @@
 <% include header %>
 <div class="container">
     <h2>Register</h2>
-    <form action="/rides">
+    <form method="POST">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
@@ -12,11 +12,11 @@
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
         </div>
         <div class="form-group">
             <label for="pwdre">Repeat Password:</label>
-            <input type="password" class="form-control" id="pwdre" placeholder="Enter password" name="pwdre">
+            <input type="password" class="form-control" id="passwordre" placeholder="Enter password" name="passwordre">
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

@@ -16,38 +16,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="/vehicles/new">AAA-111</a></td>
-                <td>Ford</td>
-                <td>Fiesta</td>
-                <td>Silver</td>
-                <td>2008</td>
-                <td><a href="showResults.php?action=delete&item=112">X</a></td>
-            </tr>
-            <tr>
-                <td><a href="/vehicles/new">AAA-111</a></td>
-                <td>Ford</td>
-                <td>Fiesta</td>
-                <td>Silver</td>
-                <td>2008</td>
-                <td><a href="showResults.php?action=delete&item=112">X</a></td>
-            </tr>
-            <tr>
-                <td><a href="/vehicles/new">AAA-111</a></td>
-                <td>Ford</td>
-                <td>Fiesta</td>
-                <td>Silver</td>
-                <td>2008</td>
-                <td><a href="showResults.php?action=delete&item=112">X</a></td>
-            </tr>
-            <tr>
-                <td><a href="/vehicles/new">AAA-111</a></td>
-                <td>Ford</td>
-                <td>Fiesta</td>
-                <td>Silver</td>
-                <td>2008</td>
-                <td><a href="showResults.php?action=delete&item=112">X</a></td>
-            </tr>
+            <% vehicles.forEach(function(item){ %>
+                <tr>
+                    <td><a href="/vehicles/<%= item.id %>/edit"><%= item.licencePlate %></a></td>
+                    <td><%= item.brand %></td>
+                    <td><%= item.type %></td>
+                    <td><%= item.colour %></td>
+                    <td><%= item.yearOfManufacture %></td>
+                    <td><a href="/vehicles/<%= item.id %>/delete">X</a></td>
+                </tr>
+            <% }); %>
         </tbody>
 
     </table>

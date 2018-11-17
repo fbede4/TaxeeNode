@@ -5,11 +5,13 @@ var updateReviewMW = require('../middleware/reviews/updateReview');
 var getReviewList = require('../middleware/reviews/getReviewList');
 
 var reviewModel = require('../models/review');
+var userModel = require('../models/user');
 
 module.exports = function (app) {
 
     var objectRepository = {
-        reviewModel: reviewModel
+        reviewModel: reviewModel,
+        userModel: userModel
     };
 
     /**

@@ -2,29 +2,29 @@
 <% include menubar %>
 <div class="container">
     <h2>Add Ride</h2>
-    <form action="/action_page.php">
+    <form method="POST">
         <div class="form-group">
             <label for="plate"><b>Pickup</b></label>
-            <input type="text" class="form-control" id="plate" placeholder="Enter Pickup" name="plate">
+            <input type="text" class="form-control" id="pickup" placeholder="Enter Pickup" name="pickup">
         </div>
         <div class="form-group">
             <label for="brand"><b>Destination</b></label>
-            <input type="text" class="form-control" placeholder="Enter Destination" name="brand" required>
+            <input type="text" class="form-control" placeholder="Enter Destination" name="destination" required>
         </div>
         <div class="form-group">
 
             <label for="colour"><b>Price</b></label>
-            <input type="number" class="form-control" placeholder="Enter Price" name="colour" required>
+            <input type="number" class="form-control" placeholder="Enter Price" name="price" required>
         </div>
         <div class="form-group">
 
             <label for="yom"><b>Distance</b></label>
-            <input type="number" class="form-control" placeholder="Enter Distance" name="yom" required>
+            <input type="number" class="form-control" placeholder="Enter Distance" name="distance" required>
         </div>
         <div class="form-group">
 
             <label for="yom"><b>Duration</b></label>
-            <input type="number" class="form-control" placeholder="Enter Duration" name="yom" required>
+            <input type="number" class="form-control" placeholder="Enter Duration" name="duration" required>
         </div>
         <button type="submit" class="btn btn-primary">Add Ride</button>
     </form>

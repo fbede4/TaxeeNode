@@ -12,7 +12,15 @@ module.exports = function (objectrepository) {
 
     return function (req, res, next) {
 
-        return next();
+        vehicleModel.findOne({
+    
+        }).populate('_driver').exec(function (err, result) {
+          if (err) {
+            return next(new Error('Error getting tasks'));
+          }
+    
+          res.tpl.vehicle = result;
+          return next();
+        });
     };
-
 };

@@ -1,16 +1,25 @@
 var requireOption = require('../common').requireOption;
 
-/**
- * Delete the vehicle object
+/*
+ * delete a vehicle
  */
 
 module.exports = function (objectrepository) {
 
-    var vehicleModel = requireOption(objectrepository, 'vehicleModel');
-
     return function (req, res, next) {
 
-        return next();
+        if (typeof res.tpl.vehicle === 'undefined') {
+          return next();
+        }
+    
+        res.tpl.vehicle.remove(function (err) {
+          if (err) {
+            return next(err);
+          }
+    
+          //redirect
+          res.redirect('/vehicles/');
+        });
     };
 
 };

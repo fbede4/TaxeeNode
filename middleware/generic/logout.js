@@ -5,8 +5,9 @@ var requireOption = require('../common').requireOption;
 module.exports = function (objectrepository) {
 
     return function (req, res, next) {
-
-        return next();
+        req.session.destroy(function (err) {
+            return next();
+        });
     };
 
 };
