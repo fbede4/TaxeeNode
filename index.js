@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(session({
     secret: 'keyboard cat',
     cookie: {
-      maxAge: 60000
+      maxAge: 9999999
     },
     resave: true,
     saveUninitialized: false

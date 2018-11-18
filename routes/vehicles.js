@@ -4,7 +4,7 @@ var renderMW = require('../middleware/generic/render');
 var getVehicleListMW = require('../middleware/vehicles/getVehicleList');
 var updateVeicleMW = require('../middleware/vehicles/updateVehicle');
 var getVehicleMW = require('../middleware/vehicles/getVehicle');
-var deleteVehicleMW = require('../middleware/vehicles/getVehicle');
+var deleteVehicleMW = require('../middleware/vehicles/deleteVehicle');
 var vehicleModel = require('../models/vehicle');
 var userModel = require('../models/user');
 

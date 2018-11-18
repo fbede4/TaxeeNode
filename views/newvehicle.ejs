@@ -5,28 +5,37 @@
     <form method="POST">
         <div class="form-group">
             <label for="plate"><b>Licence plate</b></label>
-            <input type="text" class="form-control" id="plate" placeholder="Enter Plate Number" name="plate">
+            <input type="text" class="form-control" id="plate" placeholder="Enter Plate Number" name="plate"
+                value="<%= (typeof vehicle !== 'undefined') ? vehicle.licencePlate : '' %>">
         </div>
         <div class="form-group">
             <label for="brand"><b>Brand</b></label>
-            <input type="text" class="form-control" placeholder="Enter Brand" name="brand" required>
+            <input type="text" class="form-control" placeholder="Enter Brand" name="brand" required
+             value="<%= (typeof vehicle !== 'undefined') ? vehicle.brand : '' %>">
         </div>
         <div class="form-group">
 
             <label for="type"><b>Type</b></label>
-            <input type="text" class="form-control" placeholder="Enter Type" name="type" required>
+            <input type="text" class="form-control" placeholder="Enter Type" name="type" required
+            value="<%= (typeof vehicle !== 'undefined') ? vehicle.type : '' %>">
         </div>
         <div class="form-group">
 
             <label for="colour"><b>Colour</b></label>
-            <input type="text" class="form-control" placeholder="Enter Colour" name="colour" required>
+            <input type="text" class="form-control" placeholder="Enter Colour" name="colour" required
+            value="<%= (typeof vehicle !== 'undefined') ? vehicle.colour : '' %>">
         </div>
         <div class="form-group">
 
             <label for="yom"><b>Year of manufacture</b></label>
-            <input type="text" class="form-control" placeholder="Enter Year" name="year" required>
+            <input type="text" class="form-control" placeholder="Enter Year" name="year" required
+            value="<%= (typeof vehicle !== 'undefined') ? vehicle.yearOfManufacture : '' %>">
         </div>
-        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+        <% if (typeof vehicle !== 'undefined'){ %>
+            <button type="submit" class="btn btn-primary">Modify Vehicle</button>
+        <% }else{ %>
+            <button type="submit" class="btn btn-primary">Add Vehicle</button>
+        <% } %>
     </form>
 </div>
 <% include footer %>

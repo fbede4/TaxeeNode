@@ -23,11 +23,10 @@
                     <td><%= item.type %></td>
                     <td><%= item.colour %></td>
                     <td><%= item.yearOfManufacture %></td>
-                    <td><a href="/vehicles/<%= item.id %>/delete">X</a></td>
+                    <td><a class="btn btn-primary" href="/vehicles/<%= item.id %>/delete" role="button">X</a></td>
                 </tr>
             <% }); %>
         </tbody>
-
     </table>
 </div>
 <% include footer %>

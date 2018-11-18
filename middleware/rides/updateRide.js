@@ -10,11 +10,13 @@ var requireOption = require('../common').requireOption;
 module.exports = function (objectrepository) {
 
     var rideModel = requireOption(objectrepository, 'rideModel');
+    var UserModel = requireOption(objectrepository, 'userModel');
 
     //not enough parameter
     return function (req, res, next) {
 
-        if ((typeof req.body.pickup === 'undefined') ||
+        if ((typeof req.body.driver === 'undefined') || (typeof req.body.passenger === 'undefined') ||
+          (typeof req.body.pickup === 'undefined') ||
           (typeof req.body.destination === 'undefined') ||
           (typeof req.body.price === 'undefined') ||
           (typeof req.body.duration === 'undefined') ||
@@ -34,14 +36,27 @@ module.exports = function (objectrepository) {
         ride.duration = req.body.duration;
         ride.distance = req.body.distance;
         ride.date = Date.now();
-
-        ride.save(function (err, result) {
-          if (err) {
-            return next(err);
-        }
-    
-          return res.redirect('/rides');
+        UserModel.findOne({
+          email: req.body.driver
+        }, function (err, result) {
+            if ((err) || (!result)) {
+                res.tpl.error.push('Invalid driver!');
+                return next();
+            }
+            ride._driver = result._id;
+            UserModel.findOne({
+                email: req.body.passenger
+            }, function (err, result) {
+                if ((err) || (!result)) {
+                    res.tpl.error.push('Invalid passenger!');
+                    return next();
+                }
+                ride._passenger = result._id;
+                ride.save(function (err) {
+                    //redirect to /reviews
+                    return res.redirect('/rides');
+                });
+            });
         });
-      };
-
+    }
 };
