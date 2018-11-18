@@ -13,14 +13,13 @@ module.exports = function (objectrepository) {
 
         vehicleModel.find({
           _driver: req.session.userid
-        }).populate('_driver').exec(function (err, results) {
+        }, function(err, results){
           if (err) {
-            return next(new Error('Error getting tasks'));
+            return next(err);
           }
     
           res.tpl.vehicles = results;
           return next();
         });
     };
-
 };
