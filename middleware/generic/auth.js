@@ -1,5 +1,5 @@
 /**
- * If the user is not logged in, redirects to /
+ * If the user is not logged in, redirects to /login
  */
 module.exports = function (objectrepository) {
 

@@ -10,10 +10,13 @@
   "license": "Beerware",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "istanbul": "^0.4.5",
     "jquery": "^3.3.1",
+    "mocha": "^5.2.0",
     "mongoose": "^5.3.10"
   }
 }
