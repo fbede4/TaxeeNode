@@ -53,7 +53,7 @@ module.exports = function (objectrepository) {
                 }
                 ride._passenger = result._id;
                 ride.save(function (err) {
-                    //redirect to /reviews
+                    //redirect to /rides
                     return res.redirect('/rides');
                 });
             });
