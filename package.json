@@ -9,10 +9,10 @@
   "author": "",
   "license": "Beerware",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "chai": "^4.2.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.18.2",
     "express-session": "^1.15.6",
     "istanbul": "^0.4.5",
     "jquery": "^3.4.0",
